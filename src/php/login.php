@@ -10,4 +10,24 @@ $username = $_POST["username"];
 $pwd = $_POST["pwd"];
 $con = mysqli_connect("localhost", "root", "");
 mysqli_select_db($con, "schoolsystem");
+if (7 == strlen($username)) {
+    $sql1 = "select ID,PWD from teacher where ID = '" . $username . "' and PWd = '" . $pwd . "'";
+    $result = mysqli_query($con, $sql1);
+    $num = mysqli_num_rows($result);
+    if ($num) {
+        echo json_encode("Teacher");
+    } else {
+        echo json_encode("error");
+    }
+} else {
+    $sql1 = "select ID,PWD from student where ID = '" . $username . "' and PWd = '" . $pwd . "'";
+    $result = mysqli_query($con, $sql1);
+    $num = mysqli_num_rows($result);
+    if ($num) {
+        echo json_encode("Student");
+    } else {
+        echo json_encode("error");
+    }
+}
+
 
