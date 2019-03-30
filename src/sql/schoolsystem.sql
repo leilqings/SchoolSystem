@@ -1,6 +1,7 @@
 create table student
 (
     ID             varchar(9) primary key,
+    PWD            varchar(20) not null,
     Name           varchar(10) not null,
     Class          varchar(7)  not null,
     Sex            varchar(2)  not null,
@@ -16,6 +17,7 @@ create table student
 create table teacher
 (
     ID            varchar(9) primary key,
+    PWD           varchar(20) not null,
     Name          varchar(10) not null,
     Sex           varchar(2)  not null,
     Date_of_Birth date        not null,
@@ -50,7 +52,7 @@ create table score
 (
     Student_ID varchar(9) primary key,
     Course_ID  varchar(9) not null,
-    Score varchar(4) not null ,
+    Score      varchar(4) not null,
     foreign key (Student_ID) references student (ID),
     foreign key (Course_ID) references course (ID)
 );
