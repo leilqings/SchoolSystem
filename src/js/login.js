@@ -13,7 +13,6 @@ $(document).ready(function () {
                     },
                     dataType: "json",
                     success: function (result) {
-                        alert(result);
                         if (result == 'Student') {
                             $(location).attr('href', '../html/stuPage.html');
                         } else if (result == 'Teacher') {

@@ -29,5 +29,6 @@ if (7 == strlen($username)) {
         echo json_encode("error");
     }
 }
+mysqli_close($con);
 
 
