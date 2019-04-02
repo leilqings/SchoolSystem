@@ -57,4 +57,6 @@ create table score
     foreign key (Course_ID) references course (ID)
 );
 
-INSERT INTO `schoolsystem`.`student` (`ID`, `Name`, `Class`, `Sex`, `Date_of_Birth`, `Age`, `Admission_Time`, `Birth_Place`, `Phone`, `dormitory`, `PWD`) VALUES ('20190001', '张三', '7年纪一班', '男', '2008-03-05', '11', '2018-09-01', '山东省青岛市即墨区', null, null, '123456');
+INSERT INTO `schoolsystem`.`student` (`ID`, `Name`, `Class`, `Sex`, `Date_of_Birth`, `Age`, `Admission_Time`,
+                                      `Birth_Place`, `Phone`, `dormitory`, `PWD`)
+VALUES ('20190001', '张三', '7年纪一班', '男', '2008-03-05', '11', '2018-09-01', '山东省青岛市即墨区', null, null, '123456');
