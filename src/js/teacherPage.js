@@ -1,8 +1,9 @@
 $(document).ready(function () {
     $.ajax({
         url: "../php/teacherPage.php",
-        type: "POST",
+        type: "GET",
         dataType: "json",
+        data: {request : "teacher_or_control"},
         success: function (result) {
             if (result) {
                 $(".teacher_only").hide();
