@@ -34,3 +34,9 @@ $(document).ready(function () {
         }
     });
 });
+
+$(document).keyup(function (e) {
+    if (e.keyCode == 13) {
+        $(".btn").trigger("click");
+    }
+});
