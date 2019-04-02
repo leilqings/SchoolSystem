@@ -5,23 +5,24 @@
     <title>教务管理系统教师端</title>
     <link rel="stylesheet" href="../../layui-v2.4.5/layui/css/layui.css">
     <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/teacherPage.css">
 </head>
 <body>
 <ul class="layui-nav Top">
-    <li class="layui-nav-item">教务管理系统教师端</li>
-    <li class="layui-nav-item "><a href="">用户</a></li>
-    <li class="layui-nav-item "><a href="">我</a></li>
-    <li class="layui-nav-item "><a href=""> 时间</a></li>
+    <li class="layui-nav-item" lay-unselect>教务管理系统教师端</li>
+    <li class="layui-nav-item " lay-unselect><a>用户</a></li>
+    <li class="layui-nav-item "lay-unselect><a>时间</a></li>
+    <li class="layui-nav-item "lay-unselect><a>退出</a></li>
 </ul>
-<ul class="layui-nav layui-nav-tree Left layui-nav-side">
-    <li class="layui-nav-item layui-nav-itemed">
+<ul class="layui-nav layui-nav-tree Left layui-nav-side layui-this" lay-shrink="all">
+    <li class="layui-nav-item " >
         <a href="javascript:;">个人信息</a>
-        <dl class="layui-nav-child">
+        <dl class="layui-nav-child ">
             <dd><a href="javascript:;">我的信息</a></dd>
             <dd><a href="javascript:;">修改密码</a></dd>
         </dl>
     </li>
-    <li class="layui-nav-item layui-nav-itemed">
+    <li class="layui-nav-item teacher_only">
         <a href="javascript:;">我的课程</a>
         <dl class="layui-nav-child">
             <dd><a href="javascript:;">课程</a></dd>
@@ -29,8 +30,26 @@
             <dd><a href="javascript:;">录入成绩</a></dd>
         </dl>
     </li>
+    <li class="layui-nav-item control_only">
+        <a href="javascript:;">信息管理</a>
+        <dl class="layui-nav-child">
+            <dd><a href="javascript:;">查看人员信息</a></dd>
+            <dd><a href="javascript:;">修改人员信息</a></dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item control_only">
+        <a href="javascript:;">课程管理</a>
+        <dl class="layui-nav-child">
+            <dd><a href="javascript:;">查看学生课程成绩</a></dd>
+            <dd><a href="javascript:;">修改课程信息</a></dd>
+            <dd><a href="javascript:;">添加课程</a></dd>
+            <dd><a href="javascript:;">修改成绩</a></dd>
+        </dl>
+    </li>
 </ul>
+<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
 <script src="../../layui-v2.4.5/layui/layui.js"></script>
 <script src="../js/common.js"></script>
+<script src="../js/teacherPage.js"></script>
 </body>
 </html>
