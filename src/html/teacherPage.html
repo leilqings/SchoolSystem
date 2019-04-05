@@ -9,44 +9,116 @@
 </head>
 <body>
 <ul class="layui-nav Top">
-    <li class="layui-nav-item" lay-unselect>教务管理系统教师端</li>
-    <li class="layui-nav-item " lay-unselect><a>用户</a></li>
-    <li class="layui-nav-item "lay-unselect><a>时间</a></li>
-    <li class="layui-nav-item "lay-unselect><a>退出</a></li>
+    <li class="layui-nav-item " lay-unselect>教务管理系统教师端</li>
+    <li class="layui-nav-item " lay-unselect><a class="username"></a></li>
+    <li class="layui-nav-item " lay-unselect><a class="system_time"></a></li>
+    <li class="layui-nav-item " lay-unselect><a class="cancel">退出</a></li>
 </ul>
-<ul class="layui-nav layui-nav-tree Left layui-nav-side layui-this" lay-shrink="all">
-    <li class="layui-nav-item " >
+<ul class="layui-nav layui-nav-tree Left layui-nav-side layui-this">
+    <li class="layui-nav-item ">
         <a href="javascript:;">个人信息</a>
         <dl class="layui-nav-child ">
-            <dd><a href="javascript:;">我的信息</a></dd>
-            <dd><a href="javascript:;">修改密码</a></dd>
+            <dd><a href="javascript:showDiv('person_message');">我的信息</a></dd>
+            <dd><a href="javascript:showDiv('change_password')">修改密码</a></dd>
         </dl>
     </li>
-    <li class="layui-nav-item teacher_only">
-        <a href="javascript:;">我的课程</a>
+    <li class="layui-nav-item teacher_only ">
+        <a href="javascript:; ">我的课程</a>
         <dl class="layui-nav-child">
-            <dd><a href="javascript:;">课程</a></dd>
-            <dd><a href="javascript:;">课表</a></dd>
-            <dd><a href="javascript:;">录入成绩</a></dd>
+            <dd><a href="javascript:showDiv('course');">课表</a></dd>
+            <dd><a href="javascript:showDiv('curriculum');">课程信息</a></dd>
         </dl>
     </li>
     <li class="layui-nav-item control_only">
         <a href="javascript:;">信息管理</a>
         <dl class="layui-nav-child">
-            <dd><a href="javascript:;">查看人员信息</a></dd>
-            <dd><a href="javascript:;">修改人员信息</a></dd>
+            <dd><a href="javascript:showDiv('view_personnel_information');">教师信息</a></dd>
+            <dd><a href="javascript:showDiv('change_personnel_information');">学生信息</a></dd>
         </dl>
     </li>
     <li class="layui-nav-item control_only">
         <a href="javascript:;">课程管理</a>
         <dl class="layui-nav-child">
-            <dd><a href="javascript:;">查看学生课程成绩</a></dd>
-            <dd><a href="javascript:;">修改课程信息</a></dd>
-            <dd><a href="javascript:;">添加课程</a></dd>
-            <dd><a href="javascript:;">修改成绩</a></dd>
+            <dd><a href="javascript:showDiv('view_student_grades');">学生课程信息</a></dd>
+            <dd><a href="javascript:showDiv('change_course_information');">教师课程信息</a></dd>
         </dl>
     </li>
 </ul>
+<div class="main-box ">
+    <div class="person_message  layui-form layui-form-pane layui-anim layui-anim-up " style="display: none">
+        <div class="layui-inline layui-form-item">
+            <div class=" layui-form-label ">职工号</div>
+            <div class="layui-input-block layui-input person_message_ID">2019001</div>
+        </div>
+        <div class="layui-inline layui-form-item">
+            <div class="layui-form-label ">姓名</div>
+            <div class="layui-input-block layui-input person_message_Name">王秀兰</div>
+        </div>
+        <div class="layui-inline layui-form-item">
+            <div class="layui-form-label ">性別</div>
+            <div class="layui-input-block layui-input person_message_sex">女</div>
+        </div>
+        <div class="layui-inline layui-form-item">
+            <div class="layui-form-label ">年龄</div>
+            <div class="layui-input-block layui-input person_message_age">40</div>
+        </div>
+        <div class="layui-inline layui-form-item">
+            <div class="layui-form-label ">出生日期</div>
+            <div class="layui-input-block layui-input person_message_date_of_birth">1987-05-05</div>
+        </div>
+        <div class="layui-inline layui-form-item">
+            <div class="layui-form-label">入职时间</div>
+            <div class="layui-input-block layui-input person_message_entry_time">2019-6-1</div>
+        </div>
+        <div class="layui-inline layui-form-item">
+            <div class="layui-form-label">电话号</div>
+            <div class="layui-input-block layui-input person_message_phone">12345678911</div>
+        </div>
+        <div class="layui-inline layui-form-item">
+            <div class="layui-form-label ">身份证号</div>
+            <div class="layui-input-block layui-input person_message_id_card">111111111111111</div>
+        </div>
+        <br>
+        <div class="layui-inline layui-form-item">
+            <div class="layui-form-label ">籍贯</div>
+            <div class="layui-input-block layui-input person_message_birth_place">山东省青岛市即墨区</div>
+        </div>
+    </div>
+    <div class="change_password layui-form layui-form-pane layui-anim layui-anim-up" style="display: none">
+        <div class=" layui-inline layui-form-item">
+            <div class="layui-form-label ">新密码</div>
+            <div class="layui-input-inline ">
+                <input type="text" name="title" required lay-verify="required" autocomplete="off"
+                       class="layui-input new_password">
+            </div>
+        </div>
+        <br>
+        <div class=" layui-inline layui-form-item ">
+            <div class="layui-form-label ">再次输入密码</div>
+            <div class="layui-input-inline ">
+                <input type="password" name="password" required lay-verify="required" autocomplete="off"
+                       class="layui-input new_password">
+            </div>
+            <div class="layui-form-mid layui-word-aux yes_or_no">符号</div>
+            <br>
+            <div class="layui-form-item layui-inline">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="course layui-anim layui-anim-up" style="display: none"></div>
+    <div class="curriculum layui-anim layui-anim-up" style="display: none"></div>
+    <div class="Entering_grades layui-anim layui-anim-up" style="display: none"></div>
+    <div class="view_personnel_information layui-anim layui-anim-up" style="display: none"></div>
+    <div class="change_personnel_information layui-anim layui-anim-up" style="display: none"></div>
+    <div class="view_student_grades layui-anim layui-anim-up" style="display: none"></div>
+    <div class="change_course_information layui-anim layui-anim-up" style="display: none"></div>
+    <div class="add_course layui-anim layui-anim-up" style="display: none"></div>
+    <div class="change_student_grades layui-anim layui-anim-up" style="display: none"></div>
+</div>
 <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
 <script src="../../layui-v2.4.5/layui/layui.js"></script>
 <script src="../js/common.js"></script>

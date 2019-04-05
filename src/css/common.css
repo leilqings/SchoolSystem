@@ -4,11 +4,37 @@
     left: 0;
     top: 0;
     height: 60px;
-    text-align:right;
+    text-align: right;
     border-radius: 0px;
     z-index: 999;
+    cursor: default;
 }
+
+.Top > :first-child {
+    position: relative;
+    right: 822px;
+    font-size: 20px;
+}
+
+.Top > :nth-child(2) {
+    width: 82px;
+
+}
+
+.cancel {
+    cursor: pointer;
+}
+
 .Left {
     border-radius: 0;
     margin-top: 60px;
+}
+
+.main-box{
+    position: fixed;
+    left: 200px;
+    top: 60px;
+    bottom: 0;
+    right: 0;
+    text-align: center;
 }
