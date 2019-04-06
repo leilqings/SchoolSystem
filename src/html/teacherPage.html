@@ -22,25 +22,25 @@
             <dd><a href="javascript:showDiv('change_password')">修改密码</a></dd>
         </dl>
     </li>
-    <li class="layui-nav-item teacher_only ">
+    <li class="layui-nav-item teacher_only" style="display: none">
         <a href="javascript:; ">我的课程</a>
         <dl class="layui-nav-child">
             <dd><a href="javascript:showDiv('course');">课表</a></dd>
             <dd><a href="javascript:showDiv('curriculum');">课程信息</a></dd>
         </dl>
     </li>
-    <li class="layui-nav-item control_only">
+    <li class="layui-nav-item control_only" style="display: none">
         <a href="javascript:;">信息管理</a>
         <dl class="layui-nav-child">
-            <dd><a href="javascript:showDiv('view_personnel_information');">教师信息</a></dd>
-            <dd><a href="javascript:showDiv('change_personnel_information');">学生信息</a></dd>
+            <dd><a href="javascript:showDiv('view_teacher_information');">教师信息</a></dd>
+            <dd><a href="javascript:showDiv('view_student_information');">学生信息</a></dd>
         </dl>
     </li>
-    <li class="layui-nav-item control_only">
+    <li class="layui-nav-item control_only" style="display: none">
         <a href="javascript:;">课程管理</a>
         <dl class="layui-nav-child">
-            <dd><a href="javascript:showDiv('view_student_grades');">学生课程信息</a></dd>
-            <dd><a href="javascript:showDiv('change_course_information');">教师课程信息</a></dd>
+            <dd><a href="javascript:showDiv('view_student_course');">学生课程信息</a></dd>
+            <dd><a href="javascript:showDiv('view_teacher_course');">教师课程信息</a></dd>
         </dl>
     </li>
 </ul>
@@ -112,12 +112,119 @@
     <div class="course layui-anim layui-anim-up" style="display: none"></div>
     <div class="curriculum layui-anim layui-anim-up" style="display: none"></div>
     <div class="Entering_grades layui-anim layui-anim-up" style="display: none"></div>
-    <div class="view_personnel_information layui-anim layui-anim-up" style="display: none"></div>
-    <div class="change_personnel_information layui-anim layui-anim-up" style="display: none"></div>
-    <div class="view_student_grades layui-anim layui-anim-up" style="display: none"></div>
-    <div class="change_course_information layui-anim layui-anim-up" style="display: none"></div>
-    <div class="add_course layui-anim layui-anim-up" style="display: none"></div>
-    <div class="change_student_grades layui-anim layui-anim-up" style="display: none"></div>
+    <div class="view_teacher_information layui-anim layui-anim-up" style="display: none">
+        <div class="layui-form-item check_box layui-inline">
+            <div class="layui-input layui-input-inline">
+                <i class=" layui-icon layui-icon-search"></i>
+                <input type="text" placeholder="输入查找信息" class="check_input">
+            </div>
+            <div class="layui-btn-group check_icon layui-form-mid layui-word-aux">
+                <button class="layui-btn">
+                    <i class="layui-icon" style="font-size: 20px">&#xe608;</i> 添加
+                </button>
+                <button class="layui-btn">
+                    <i class="layui-icon" style="font-size: 18px">&#xe62f;</i>上传
+                </button>
+                <button class="layui-btn">
+                    <i class="layui-icon" style="font-size: 20px">&#xe601;</i> 下载
+                </button>
+            </div>
+        </div>
+        <table class="layui-table">
+            <colgroup>
+            </colgroup>
+            <thead>
+            <tr>
+                <th>职工号</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>出生日期</th>
+                <th>年龄</th>
+                <th>入职时间</th>
+                <th>电话</th>
+                <th>身份证号</th>
+                <th>籍贯</th>
+                <th>密码</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tr>
+                <td>2019001</td>
+                <td>王秀兰</td>
+                <td>女</td>
+                <td>1985-05-05</td>
+                <td>40</td>
+                <td>2019-06-01</td>
+                <td>11111111111</td>
+                <td>111111111111111</td>
+                <td>151511</td>
+                <td>123456</td>
+                <td><a href="javascript:;"><i class="layui-icon layui-icon-edit"></i></a>
+                    <a href="javascript:;"><i class="layui-icon layui-icon-delete"></i></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="view_student_information layui-anim layui-anim-up" style="display: none">
+        <div class="layui-form-item check_box layui-inline">
+            <div class="layui-input layui-input-inline">
+                <i class=" layui-icon layui-icon-search"></i>
+                <input type="text" placeholder="输入查找信息" class="check_input">
+            </div>
+            <div class="layui-btn-group check_icon layui-form-mid layui-word-aux">
+                <button class="layui-btn">
+                    <i class="layui-icon" style="font-size: 20px">&#xe608;</i> 添加
+                </button>
+                <button class="layui-btn">
+                    <i class="layui-icon" style="font-size: 18px">&#xe62f;</i>上传
+                </button>
+                <button class="layui-btn">
+                    <i class="layui-icon" style="font-size: 20px">&#xe601;</i> 下载
+                </button>
+            </div>
+        </div>
+        <table class="layui-table">
+            <colgroup>
+            </colgroup>
+            <thead>
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>班级</th>
+                <th>出生日期</th>
+                <th>年龄</th>
+                <th>入学时间</th>
+                <th>身份证号</th>
+                <th>籍贯</th>
+                <th>宿舍</th>
+                <th>密码</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>123</td>
+                <td>45645</td>
+                <td>45645</td>
+                <td>456</td>
+                <td>45645</td>
+                <td>54645</td>
+                <td>456456</td>
+                <td>456456</td>
+                <td>4564</td>
+                <td>456456</td>
+                <td>456456</td>
+                <td><a href="javascript:;"><i class="layui-icon layui-icon-edit"></i></a>
+                    <a href="javascript:;"><i class="layui-icon layui-icon-delete"></i></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="view_student_course layui-anim layui-anim-up" style="display: none"></div>
+    <div class="view_teacher_course layui-anim layui-anim-up" style="display: none"></div>
 </div>
 <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
 <script src="../../layui-v2.4.5/layui/layui.js"></script>

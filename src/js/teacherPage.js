@@ -6,11 +6,9 @@ $(document).ready(function () {
         data: {request: "teacher_or_control"},
         success: function (result) {
             if (result) {
-                $(".teacher_only").hide();
                 $(".control_only").show();
             } else {
                 $(".teacher_only").show();
-                $(".control_only").hide();
             }
         },
         error: function (data) {
@@ -37,11 +35,9 @@ function showDiv(Div) {
     $(".course").hide();
     $(".curriculum").hide();
     $(".Entering_grades").hide();
-    $(".view_personnel_information").hide();
-    $(".change_personnel_information").hide();
-    $(".view_student_grades").hide();
-    $(".change_course_information").hide();
-    $(".add_course").hide();
-    $(".change_student_grades").hide();
+    $(".view_teacher_information").hide();
+    $(".view_student_information").hide();
+    $(".view_student_course").hide();
+    $(".view_teacher_course").hide();
     $("."+Div).show();
 }
