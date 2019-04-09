@@ -81,7 +81,7 @@ body {
 .forget_pwd {
     font-size: 13px;
     height: 20px;
-    width: 100px;
+    width: auto;
     margin-top: 50px;
     margin-left: 235px;
     position: absolute;

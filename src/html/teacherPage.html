@@ -22,21 +22,21 @@
             <dd><a href="javascript:showDiv('change_password')">修改密码</a></dd>
         </dl>
     </li>
-    <li class="layui-nav-item teacher_only" style="display: none">
+    <li class="layui-nav-item teacher" style="display: none">
         <a href="javascript:; ">我的课程</a>
         <dl class="layui-nav-child">
             <dd><a href="javascript:showDiv('course');">课表</a></dd>
             <dd><a href="javascript:showDiv('curriculum');">课程信息</a></dd>
         </dl>
     </li>
-    <li class="layui-nav-item control_only" style="display: none">
+    <li class="layui-nav-item controller" style="display: none">
         <a href="javascript:;">信息管理</a>
         <dl class="layui-nav-child">
             <dd><a href="javascript:showDiv('view_teacher_information');">教师信息</a></dd>
             <dd><a href="javascript:showDiv('view_student_information');">学生信息</a></dd>
         </dl>
     </li>
-    <li class="layui-nav-item control_only" style="display: none">
+    <li class="layui-nav-item controller" style="display: none">
         <a href="javascript:;">课程管理</a>
         <dl class="layui-nav-child">
             <dd><a href="javascript:showDiv('view_student_course');">学生课程信息</a></dd>
@@ -109,9 +109,30 @@
             </div>
         </div>
     </div>
-    <div class="course layui-anim layui-anim-up" style="display: none"></div>
     <div class="curriculum layui-anim layui-anim-up" style="display: none"></div>
-    <div class="Entering_grades layui-anim layui-anim-up" style="display: none"></div>
+    <div class="Entering_grades layui-anim layui-anim-up" style="display: none">
+        <table class="layui-table">
+            <colgroup>
+            </colgroup>
+            <thead>
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>班级</th>
+                <th>成绩</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>123</td>
+                <td>45645</td>
+                <td>45645</td>
+                <td><a href="javascript:;"><i class="layui-icon layui-icon-edit"></i></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
     <div class="view_teacher_information layui-anim layui-anim-up" style="display: none">
         <div class="layui-form-item check_box layui-inline">
             <div class="layui-input layui-input-inline">
@@ -223,8 +244,100 @@
             </tbody>
         </table>
     </div>
-    <div class="view_student_course layui-anim layui-anim-up" style="display: none"></div>
-    <div class="view_teacher_course layui-anim layui-anim-up" style="display: none"></div>
+    <div class="view_student_course layui-anim layui-anim-up" style="display: none">
+        <div class="layui-form-item check_box layui-inline">
+            <div class="layui-input layui-input-inline">
+                <i class=" layui-icon layui-icon-search"></i>
+                <input type="text" placeholder="输入查找信息" class="check_input">
+            </div>
+            <div class="layui-btn-group check_icon layui-form-mid layui-word-aux">
+                <button class="layui-btn">
+                    <i class="layui-icon" style="font-size: 20px">&#xe608;</i> 添加
+                </button>
+                <button class="layui-btn">
+                    <i class="layui-icon" style="font-size: 18px">&#xe62f;</i>上传
+                </button>
+                <button class="layui-btn">
+                    <i class="layui-icon" style="font-size: 20px">&#xe601;</i> 下载
+                </button>
+            </div>
+        </div>
+        <table class="layui-table">
+            <colgroup>
+            </colgroup>
+            <thead>
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>课程号</th>
+                <th>课程名</th>
+                <th>开课时间</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>123</td>
+                <td>45645</td>
+                <td>45645</td>
+                <td>456</td>
+                <td>456</td>
+                <th>sad</th>
+                <td><a href="javascript:;"><i class="layui-icon layui-icon-edit"></i></a>
+                    <a href="javascript:;"><i class="layui-icon layui-icon-delete"></i></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="view_teacher_course layui-anim layui-anim-up" style="display: none">
+        <div class="layui-form-item check_box layui-inline">
+            <div class="layui-input layui-input-inline">
+                <i class=" layui-icon layui-icon-search"></i>
+                <input type="text" placeholder="输入查找信息" class="check_input">
+            </div>
+            <div class="layui-btn-group check_icon layui-form-mid layui-word-aux">
+                <button class="layui-btn">
+                    <i class="layui-icon" style="font-size: 20px">&#xe608;</i> 添加
+                </button>
+                <button class="layui-btn">
+                    <i class="layui-icon" style="font-size: 18px">&#xe62f;</i>上传
+                </button>
+                <button class="layui-btn">
+                    <i class="layui-icon" style="font-size: 20px">&#xe601;</i> 下载
+                </button>
+            </div>
+        </div>
+        <table class="layui-table">
+            <colgroup>
+            </colgroup>
+            <thead>
+            <tr>
+                <th>职工号</th>
+                <th>姓名</th>
+                <th>课程号</th>
+                <th>课程名</th>
+                <th>开课时间</th>
+                <th>总学时</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>123</td>
+                <td>45645</td>
+                <td>45645</td>
+                <td>456</td>
+                <td>45645</td>
+                <td>54645</td>
+                <td><a href="javascript:;"><i class="layui-icon layui-icon-edit"></i></a>
+                    <a href="javascript:;"><i class="layui-icon layui-icon-delete"></i></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
 <script src="../../layui-v2.4.5/layui/layui.js"></script>

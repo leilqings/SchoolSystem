@@ -6,9 +6,9 @@ $(document).ready(function () {
         data: {request: "teacher_or_control"},
         success: function (result) {
             if (result) {
-                $(".control_only").show();
+                $(".controller").show();
             } else {
-                $(".teacher_only").show();
+                $(".teacher").show();
             }
         },
         error: function (data) {
