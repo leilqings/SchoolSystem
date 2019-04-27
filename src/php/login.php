@@ -15,7 +15,7 @@ if (7 == strlen($username)) {
     $result = mysqli_query($con, $sql1);
     $num = mysqli_num_rows($result);
     if ($num) {
-        $_SESSION['username']=$username;
+        $_SESSION['ID']=$username;
         echo json_encode("Teacher");
     } else {
         echo json_encode("error");
@@ -25,6 +25,7 @@ if (7 == strlen($username)) {
     $result = mysqli_query($con, $sql1);
     $num = mysqli_num_rows($result);
     if ($num) {
+        $_SESSION['ID']=$username;
         echo json_encode("Student");
     } else {
         echo json_encode("error");

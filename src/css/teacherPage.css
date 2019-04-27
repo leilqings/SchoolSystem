@@ -42,7 +42,6 @@
 
 .check_box {
     margin-left: 250px;
-    margin-top: 20px;
     width: 100%;
     text-align: left;
     line-height: 38px;
@@ -50,7 +49,6 @@
 
 .check_box>.layui-input{
     width: 500px;
-   margin-top: 9px;
 }
 
 .check_input{
@@ -61,4 +59,8 @@
 }
 .check_icon{
     padding: 0px;
+}
+
+.layui-table-tool-temp{
+    padding-right: 0;
 }

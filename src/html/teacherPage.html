@@ -10,7 +10,7 @@
 <body>
 <ul class="layui-nav Top">
     <li class="layui-nav-item " lay-unselect>教务管理系统教师端</li>
-    <li class="layui-nav-item " lay-unselect><a class="username"></a></li>
+    <li class="layui-nav-item " lay-unselect ><a class="username"></a></li>
     <li class="layui-nav-item " lay-unselect><a class="system_time"></a></li>
     <li class="layui-nav-item " lay-unselect><a class="cancel">退出</a></li>
 </ul>
@@ -18,29 +18,29 @@
     <li class="layui-nav-item ">
         <a href="javascript:;">个人信息</a>
         <dl class="layui-nav-child ">
-            <dd><a href="javascript:showDiv('person_message');">我的信息</a></dd>
-            <dd><a href="javascript:showDiv('change_password')">修改密码</a></dd>
+            <dd><a href="javascript:showDiv('person_message');" class="person_message_event">我的信息</a></dd>
+            <dd><a href="javascript:showDiv('change_password');">修改密码</a></dd>
         </dl>
     </li>
     <li class="layui-nav-item teacher" style="display: none">
         <a href="javascript:; ">我的课程</a>
         <dl class="layui-nav-child">
-            <dd><a href="javascript:showDiv('course');">课表</a></dd>
-            <dd><a href="javascript:showDiv('curriculum');">课程信息</a></dd>
+            <dd><a href="javascript:showDiv('enterint_grades');">课程信息</a></dd>
         </dl>
     </li>
     <li class="layui-nav-item controller" style="display: none">
         <a href="javascript:;">信息管理</a>
         <dl class="layui-nav-child">
             <dd><a href="javascript:showDiv('view_teacher_information');">教师信息</a></dd>
-            <dd><a href="javascript:showDiv('view_student_information');">学生信息</a></dd>
+            <dd><a href="javascript:showDiv('view_student_information');" class="view_student_information_event">学生信息</a></dd>
         </dl>
     </li>
     <li class="layui-nav-item controller" style="display: none">
         <a href="javascript:;">课程管理</a>
         <dl class="layui-nav-child">
-            <dd><a href="javascript:showDiv('view_student_course');">学生课程信息</a></dd>
-            <dd><a href="javascript:showDiv('view_teacher_course');">教师课程信息</a></dd>
+            <dd><a href="javascript:showDiv('view_student_course');" class="view_electoral_information_event">学生选课信息</a></dd>
+            <dd><a href="javascript:showDiv('view_student_score');" class="view_score_information_event">学生课程信息</a></dd>
+            <dd><a href="javascript:showDiv('view_teacher_course');" class="view_course_information_event">教师课程信息</a></dd>
         </dl>
     </li>
 </ul>
@@ -48,40 +48,40 @@
     <div class="person_message  layui-form layui-form-pane layui-anim layui-anim-up " style="display: none">
         <div class="layui-inline layui-form-item">
             <div class=" layui-form-label ">职工号</div>
-            <div class="layui-input-block layui-input person_message_ID">2019001</div>
+            <div class="layui-input-block layui-input person_message_ID"></div>
         </div>
         <div class="layui-inline layui-form-item">
             <div class="layui-form-label ">姓名</div>
-            <div class="layui-input-block layui-input person_message_Name">王秀兰</div>
+            <div class="layui-input-block layui-input person_message_Name"></div>
         </div>
         <div class="layui-inline layui-form-item">
             <div class="layui-form-label ">性別</div>
-            <div class="layui-input-block layui-input person_message_sex">女</div>
+            <div class="layui-input-block layui-input person_message_sex"></div>
         </div>
         <div class="layui-inline layui-form-item">
             <div class="layui-form-label ">年龄</div>
-            <div class="layui-input-block layui-input person_message_age">40</div>
+            <div class="layui-input-block layui-input person_message_age"></div>
         </div>
         <div class="layui-inline layui-form-item">
             <div class="layui-form-label ">出生日期</div>
-            <div class="layui-input-block layui-input person_message_date_of_birth">1987-05-05</div>
+            <div class="layui-input-block layui-input person_message_date_of_birth"></div>
         </div>
         <div class="layui-inline layui-form-item">
             <div class="layui-form-label">入职时间</div>
-            <div class="layui-input-block layui-input person_message_entry_time">2019-6-1</div>
+            <div class="layui-input-block layui-input person_message_entry_time"></div>
         </div>
         <div class="layui-inline layui-form-item">
             <div class="layui-form-label">电话号</div>
-            <div class="layui-input-block layui-input person_message_phone">12345678911</div>
+            <div class="layui-input-block layui-input person_message_phone"></div>
         </div>
         <div class="layui-inline layui-form-item">
             <div class="layui-form-label ">身份证号</div>
-            <div class="layui-input-block layui-input person_message_id_card">111111111111111</div>
+            <div class="layui-input-block layui-input person_message_id_card"></div>
         </div>
         <br>
         <div class="layui-inline layui-form-item">
             <div class="layui-form-label ">籍贯</div>
-            <div class="layui-input-block layui-input person_message_birth_place">山东省青岛市即墨区</div>
+            <div class="layui-input-block layui-input person_message_birth_place"></div>
         </div>
     </div>
     <div class="change_password layui-form layui-form-pane layui-anim layui-anim-up" style="display: none">
@@ -89,7 +89,7 @@
             <div class="layui-form-label ">新密码</div>
             <div class="layui-input-inline ">
                 <input type="text" name="title" required lay-verify="required" autocomplete="off"
-                       class="layui-input new_password">
+                       class="layui-input new_password password1">
             </div>
         </div>
         <br>
@@ -97,248 +97,290 @@
             <div class="layui-form-label ">再次输入密码</div>
             <div class="layui-input-inline ">
                 <input type="password" name="password" required lay-verify="required" autocomplete="off"
-                       class="layui-input new_password">
+                       class="layui-input new_password password2">
             </div>
-            <div class="layui-form-mid layui-word-aux yes_or_no">符号</div>
             <br>
             <div class="layui-form-item layui-inline">
                 <div class="layui-input-block">
-                    <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
-                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    <button class="layui-btn password_btn" lay-submit lay-filter="formDemo">立即提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary password_reset">重置</button>
                 </div>
             </div>
         </div>
     </div>
-    <div class="curriculum layui-anim layui-anim-up" style="display: none"></div>
     <div class="Entering_grades layui-anim layui-anim-up" style="display: none">
-        <table class="layui-table">
-            <colgroup>
-            </colgroup>
-            <thead>
-            <tr>
-                <th>学号</th>
-                <th>姓名</th>
-                <th>班级</th>
-                <th>成绩</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>123</td>
-                <td>45645</td>
-                <td>45645</td>
-                <td><a href="javascript:;"><i class="layui-icon layui-icon-edit"></i></a>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+        <table class="layui-table" id="enter_grades_table" lay-filter="grades_table"></table>
     </div>
     <div class="view_teacher_information layui-anim layui-anim-up" style="display: none">
-        <div class="layui-form-item check_box layui-inline">
-            <div class="layui-input layui-input-inline">
-                <i class=" layui-icon layui-icon-search"></i>
-                <input type="text" placeholder="输入查找信息" class="check_input">
-            </div>
-            <div class="layui-btn-group check_icon layui-form-mid layui-word-aux">
-                <button class="layui-btn">
-                    <i class="layui-icon" style="font-size: 20px">&#xe608;</i> 添加
-                </button>
-                <button class="layui-btn">
-                    <i class="layui-icon" style="font-size: 18px">&#xe62f;</i>上传
-                </button>
-                <button class="layui-btn">
-                    <i class="layui-icon" style="font-size: 20px">&#xe601;</i> 下载
-                </button>
-            </div>
-        </div>
-        <table class="layui-table">
-            <colgroup>
-            </colgroup>
-            <thead>
-            <tr>
-                <th>职工号</th>
-                <th>姓名</th>
-                <th>性别</th>
-                <th>出生日期</th>
-                <th>年龄</th>
-                <th>入职时间</th>
-                <th>电话</th>
-                <th>身份证号</th>
-                <th>籍贯</th>
-                <th>密码</th>
-                <th>操作</th>
-            </tr>
-            </thead>
-            <tr>
-                <td>2019001</td>
-                <td>王秀兰</td>
-                <td>女</td>
-                <td>1985-05-05</td>
-                <td>40</td>
-                <td>2019-06-01</td>
-                <td>11111111111</td>
-                <td>111111111111111</td>
-                <td>151511</td>
-                <td>123456</td>
-                <td><a href="javascript:;"><i class="layui-icon layui-icon-edit"></i></a>
-                    <a href="javascript:;"><i class="layui-icon layui-icon-delete"></i></a>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+        <table class="layui-table" id="teacher_information_table" lay-filter="teacher_table"></table>
     </div>
     <div class="view_student_information layui-anim layui-anim-up" style="display: none">
-        <div class="layui-form-item check_box layui-inline">
-            <div class="layui-input layui-input-inline">
-                <i class=" layui-icon layui-icon-search"></i>
-                <input type="text" placeholder="输入查找信息" class="check_input">
-            </div>
-            <div class="layui-btn-group check_icon layui-form-mid layui-word-aux">
-                <button class="layui-btn">
-                    <i class="layui-icon" style="font-size: 20px">&#xe608;</i> 添加
-                </button>
-                <button class="layui-btn">
-                    <i class="layui-icon" style="font-size: 18px">&#xe62f;</i>上传
-                </button>
-                <button class="layui-btn">
-                    <i class="layui-icon" style="font-size: 20px">&#xe601;</i> 下载
-                </button>
-            </div>
-        </div>
-        <table class="layui-table">
-            <colgroup>
-            </colgroup>
-            <thead>
-            <tr>
-                <th>学号</th>
-                <th>姓名</th>
-                <th>性别</th>
-                <th>班级</th>
-                <th>出生日期</th>
-                <th>年龄</th>
-                <th>入学时间</th>
-                <th>身份证号</th>
-                <th>籍贯</th>
-                <th>宿舍</th>
-                <th>密码</th>
-                <th>操作</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>123</td>
-                <td>45645</td>
-                <td>45645</td>
-                <td>456</td>
-                <td>45645</td>
-                <td>54645</td>
-                <td>456456</td>
-                <td>456456</td>
-                <td>4564</td>
-                <td>456456</td>
-                <td>456456</td>
-                <td><a href="javascript:;"><i class="layui-icon layui-icon-edit"></i></a>
-                    <a href="javascript:;"><i class="layui-icon layui-icon-delete"></i></a>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+        <table class="layui-table" id="student_information_table" lay-filter="student_table"></table>
     </div>
     <div class="view_student_course layui-anim layui-anim-up" style="display: none">
-        <div class="layui-form-item check_box layui-inline">
-            <div class="layui-input layui-input-inline">
-                <i class=" layui-icon layui-icon-search"></i>
-                <input type="text" placeholder="输入查找信息" class="check_input">
-            </div>
-            <div class="layui-btn-group check_icon layui-form-mid layui-word-aux">
-                <button class="layui-btn">
-                    <i class="layui-icon" style="font-size: 20px">&#xe608;</i> 添加
-                </button>
-                <button class="layui-btn">
-                    <i class="layui-icon" style="font-size: 18px">&#xe62f;</i>上传
-                </button>
-                <button class="layui-btn">
-                    <i class="layui-icon" style="font-size: 20px">&#xe601;</i> 下载
-                </button>
-            </div>
-        </div>
-        <table class="layui-table">
-            <colgroup>
-            </colgroup>
-            <thead>
-            <tr>
-                <th>学号</th>
-                <th>姓名</th>
-                <th>课程号</th>
-                <th>课程名</th>
-                <th>开课时间</th>
-                <th>成绩</th>
-                <th>操作</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>123</td>
-                <td>45645</td>
-                <td>45645</td>
-                <td>456</td>
-                <td>456</td>
-                <th>sad</th>
-                <td><a href="javascript:;"><i class="layui-icon layui-icon-edit"></i></a>
-                    <a href="javascript:;"><i class="layui-icon layui-icon-delete"></i></a>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+        <table class="layui-table" id="electoral_information_table" lay-filter="electoral_table"></table>
+    </div>
+    <div class="view_student_score layui-anim layui-anim-up" style="display: none">
+        <table class="layui-table" id="score_information_table" lay-filter="score_table"></table>
     </div>
     <div class="view_teacher_course layui-anim layui-anim-up" style="display: none">
-        <div class="layui-form-item check_box layui-inline">
-            <div class="layui-input layui-input-inline">
-                <i class=" layui-icon layui-icon-search"></i>
-                <input type="text" placeholder="输入查找信息" class="check_input">
-            </div>
-            <div class="layui-btn-group check_icon layui-form-mid layui-word-aux">
-                <button class="layui-btn">
-                    <i class="layui-icon" style="font-size: 20px">&#xe608;</i> 添加
-                </button>
-                <button class="layui-btn">
-                    <i class="layui-icon" style="font-size: 18px">&#xe62f;</i>上传
-                </button>
-                <button class="layui-btn">
-                    <i class="layui-icon" style="font-size: 20px">&#xe601;</i> 下载
-                </button>
-            </div>
-        </div>
-        <table class="layui-table">
-            <colgroup>
-            </colgroup>
-            <thead>
-            <tr>
-                <th>职工号</th>
-                <th>姓名</th>
-                <th>课程号</th>
-                <th>课程名</th>
-                <th>开课时间</th>
-                <th>总学时</th>
-                <th>操作</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>123</td>
-                <td>45645</td>
-                <td>45645</td>
-                <td>456</td>
-                <td>45645</td>
-                <td>54645</td>
-                <td><a href="javascript:;"><i class="layui-icon layui-icon-edit"></i></a>
-                    <a href="javascript:;"><i class="layui-icon layui-icon-delete"></i></a>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+        <table class="layui-table" id="course_information_table" lay-filter="course_table"></table>
     </div>
 </div>
+<div class="layui-form" id="active_add_teacher" style="display: none;margin-top: 8px" action="">
+    <div class="layui-form-item">
+        <label class="layui-form-label">姓名</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" required lay-verify="required" placeholder="请输入姓名" autocomplete="off"
+                   class="name_teacher layui-input" style="width: 600px">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">性别</label>
+        <div class="layui-input-block sex_teacher">
+            <input type="radio" name="sex" value="男" title="男" style="display: none">
+            <input type="radio" name="sex" value="女" title="女" checked style="display: none">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">出生日期</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" required lay-verify="required" placeholder="请输入出生日期" autocomplete="off"
+                   class="data_of_birth_teacher layui-input" style="width: 600px">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">年龄</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" required lay-verify="required" placeholder="请输入年龄" autocomplete="off"
+                   class="age_teacher layui-input" style="width: 600px">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">入职时间</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" required lay-verify="required" placeholder="请输入入职时间" autocomplete="off"
+                   class="entry_time_teacher layui-input" style="width: 600px">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">联系方式</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" required lay-verify="required" placeholder="请输入手机号码" autocomplete="off"
+                   class="phone_teacher layui-input" style="width: 600px">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">身份证</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" required lay-verify="required" placeholder="请输入身份证" autocomplete="off"
+                   class="id_card_teacher layui-input" style="width: 600px">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">籍贯</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" required lay-verify="required" placeholder="请输入籍贯" autocomplete="off"
+                   class="birth_place_teacher layui-input" style="width: 600px">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">管理员</label>
+        <div class="layui-input-block control_teacher">
+            <input type="radio" name="control" value="1" title="是">
+            <input type="radio" name="control" value="0" title="否" checked>
+        </div>
+    </div>
+    <button class="sub-bindbtn_teacher" lay-submit lay-filter="bind" style="display: none;">
+    </button>
+</div>
+<div class="layui-form" id="active_add_student" style="display: none;margin-top: 8px" action="">
+    <div class="layui-form-item">
+        <label class="layui-form-label">姓名</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" required lay-verify="required" placeholder="请输入姓名" autocomplete="off"
+                   class="name_student layui-input" style="width: 600px">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">性别</label>
+        <div class="layui-input-block sex_student">
+            <input type="radio" name="sex" value="男" title="男" style="display: none">
+            <input type="radio" name="sex" value="女" title="女" checked style="display: none">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">班级</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" required lay-verify="required" placeholder="请输入姓名" autocomplete="off"
+                   class="class_student layui-input" style="width: 600px">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">出生日期</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" required lay-verify="required" placeholder="请输入出生日期" autocomplete="off"
+                   class="data_of_birth_student layui-input" style="width: 600px">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">年龄</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" required lay-verify="required" placeholder="请输入年龄" autocomplete="off"
+                   class="age_student layui-input" style="width: 600px">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">入学时间</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" required lay-verify="required" placeholder="请输入入学时间" autocomplete="off"
+                   class="admission_time_student layui-input" style="width: 600px">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">公寓</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" required lay-verify="required" placeholder="请输入手机号码" autocomplete="off"
+                   class="dormitory_student layui-input" style="width: 600px">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">身份证</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" required lay-verify="required" placeholder="请输入身份证" autocomplete="off"
+                   class="id_card_student layui-input" style="width: 600px">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">籍贯</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" required lay-verify="required" placeholder="请输入籍贯" autocomplete="off"
+                   class="birth_place_student layui-input" style="width: 600px">
+        </div>
+    </div>
+    </div>
+    <button class="sub-bindbtn_student" lay-submit lay-filter="bind" style="display: none;">
+    </button>
+</div><div class="layui-form" id="active_add_electoral" style="display: none;margin-top: 8px" action="">
+    <div class="layui-form-item">
+        <label class="layui-form-label">课程号</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" required lay-verify="required" placeholder="请输入课程号" autocomplete="off"
+                   class="course_id_electoral layui-input" style="width: 600px">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">学号</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" required lay-verify="required" placeholder="请输入学号" autocomplete="off"
+                   class="student_id_electoral layui-input" style="width: 600px">
+        </div>
+    </div>
+    <button class="sub-bindbtn_electoral" lay-submit lay-filter="bind" style="display: none;">
+    </button>
+</div>
+</div><div class="layui-form" id="active_add_score" style="display: none;margin-top: 8px" action="">
+    <div class="layui-form-item">
+        <label class="layui-form-label">课程号</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" required lay-verify="required" placeholder="请输入课程号" autocomplete="off"
+                   class="course_id_score layui-input" style="width: 600px">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">学号</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" required lay-verify="required" placeholder="请输入学号" autocomplete="off"
+                   class="student_id_score layui-input" style="width: 600px">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">成绩</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" required lay-verify="required" placeholder="请输入成绩" autocomplete="off"
+                   class="score_score layui-input" style="width: 600px">
+        </div>
+    </div>
+    <button class="sub-bindbtn_score" lay-submit lay-filter="bind" style="display: none;">
+    </button>
+</div>
+<div class="layui-form" id="active_add_course" style="display: none;margin-top: 8px" action="">
+    <div class="layui-form-item">
+        <label class="layui-form-label">课程名</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" required lay-verify="required" placeholder="请输入课程名" autocomplete="off"
+                   class="name_course layui-input" style="width: 600px">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">课程类型</label>
+        <div class="layui-input-block  course_type_course">
+            <input type="radio" name="course_type" value="必修" title="必修" style="display: none">
+            <input type="radio" name="course_type" value="选修" title="选修" checked style="display: none">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">开课时间</label>
+        <div class="layui-input-block " style="width: 600px">
+            <select class="start_time_course" lay-verify="required">
+                <option value=""></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">教师职工号</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" required lay-verify="required" placeholder="请输入职工号" autocomplete="off"
+                   class="teacher_id_course layui-input" style="width: 600px">
+        </div>
+    </div>
+    <button class="sub-bindbtn_course" lay-submit lay-filter="bind" style="display: none;">
+    </button>
+</div>
+<script type="text/html" id="active_demo">
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<script type="text/html" id="active_bar">
+    <div class=" check_box layui-inline">
+        <div class="layui-input layui-input-inline">
+            <i class=" layui-icon layui-icon-search"></i>
+            <input type="text" placeholder="输入查找信息" class="check_input check_input_course">
+        </div>
+        <div class="layui-btn-group layui-btn-container check_icon  layui-word-aux">
+            <button class="layui-btn layui-brn-sm" lay-event="search">
+                <i class="layui-icon layui-icon-search" style="font-size: 20px" ></i> 搜索
+            </button>
+            <button class="layui-btn layui-brn-sm" lay-event="add">
+                <i class="layui-icon" style="font-size: 20px" >&#xe608;</i> 添加
+            </button>
+        </div>
+    </div>
+</script>
+<script type="text/html" id="active_bar_student">
+    <div class=" check_box layui-inline">
+        <div class="layui-input layui-input-inline">
+            <i class=" layui-icon layui-icon-search"></i>
+            <input type="text" placeholder="输入查找信息" class="check_input check_input_course">
+        </div>
+        <div class="layui-btn-group layui-btn-container check_icon  layui-word-aux">
+            <button class="layui-btn layui-brn-sm" lay-event="search">
+                <i class="layui-icon layui-icon-search" style="font-size: 20px" ></i> 搜索
+            </button>
+            <button class="layui-btn layui-brn-sm" lay-event="add">
+                <i class="layui-icon" style="font-size: 20px" >&#xe608;</i> 添加
+            </button>
+            <button class="layui-btn upload_btn">
+                <i class="layui-icon" style="font-size: 18px" >&#xe62f;</i>上传
+            </button>
+        </div>
+    </div>
+</script>
 <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
 <script src="../../layui-v2.4.5/layui/layui.js"></script>
 <script src="../js/common.js"></script>

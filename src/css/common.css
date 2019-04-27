@@ -30,15 +30,20 @@
     margin-top: 60px;
 }
 
-.main-box{
+.main-box {
     position: fixed;
     left: 200px;
     top: 60px;
     bottom: 0;
     right: 0;
     text-align: center;
+    overflow: auto;
 }
 
-.layui-table th{
+.layui-table th {
     text-align: center;
+}
+
+.username {
+    width: 60px;
 }
