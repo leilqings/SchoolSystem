@@ -25,7 +25,7 @@
     <li class="layui-nav-item teacher" style="display: none">
         <a href="javascript:; ">我的课程</a>
         <dl class="layui-nav-child">
-            <dd><a href="javascript:showDiv('enterint_grades');">课程信息</a></dd>
+            <dd><a href="javascript:showDiv('Entering_grades');">课程信息</a></dd>
         </dl>
     </li>
     <li class="layui-nav-item controller" style="display: none">
@@ -84,27 +84,26 @@
             <div class="layui-input-block layui-input person_message_birth_place"></div>
         </div>
     </div>
-    <div class="change_password layui-form layui-form-pane layui-anim layui-anim-up" style="display: none">
-        <div class=" layui-inline layui-form-item">
+    <div class="change_password layui-form layui-form-pane " style="display: none">
+        <div class=" layui-form-item">
             <div class="layui-form-label ">新密码</div>
-            <div class="layui-input-inline ">
+            <div class="layui-input-block ">
                 <input type="text" name="title" required lay-verify="required" autocomplete="off"
                        class="layui-input new_password password1">
             </div>
         </div>
-        <br>
-        <div class=" layui-inline layui-form-item ">
+
+        <div class=" layui-form-item ">
             <div class="layui-form-label ">再次输入密码</div>
-            <div class="layui-input-inline ">
+            <div class="layui-input-block ">
                 <input type="password" name="password" required lay-verify="required" autocomplete="off"
                        class="layui-input new_password password2">
             </div>
-            <br>
-            <div class="layui-form-item layui-inline">
-                <div class="layui-input-block">
-                    <button class="layui-btn password_btn" lay-submit lay-filter="formDemo">立即提交</button>
-                    <button type="reset" class="layui-btn layui-btn-primary password_reset">重置</button>
-                </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn password_btn" lay-submit lay-filter="formDemon">立即提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary password_reset">重置</button>
             </div>
         </div>
     </div>

@@ -102,12 +102,12 @@ switch ($_GET["request"]) {
         break;
     case "view_score_information":
         if (empty($_GET['key'])) {
-            $sql = "select Student_ID,student.Name,Course_ID,course.Name,course.start_Time,Score 
+            $sql = "select Student_ID,student.Name as Student_Name,Course_ID,course.Name as Course_Name,course.start_Time,Score 
                         from score,student,course 
                         where score.Student_ID = student.ID and score.Course_ID = course.ID 
                         order by student_ID ";
         } else {
-            $sql = "select Student_ID,student.Name,Course_ID,course.Name,course.start_Time,Score 
+            $sql = "select Student_ID,student.Name as Student_Name,Course_ID,course.Name as Course_ID,course.start_Time,Score 
                         from score,student,course 
                         where (score.Student_ID = student.ID and score.Course_ID = course.ID)and
                               ( Student_ID like '%" . $_GET['key'] . "%' or student.Name like  '%" . $_GET['key'] . "%' or Course_ID like  '%" . $_GET['key'] . "%' or course.start_time like '%" . $_GET['key'] . "%'or course.Name like '%" . $_GET['key'] . "%') 
@@ -131,7 +131,7 @@ switch ($_GET["request"]) {
         if (empty($_GET['key'])) {
             $sql = "select electoral.Student_ID as Student_ID,student.Name as Student_Name,electoral.Course_ID as Course_ID,course.Name as Course_Name,teacher.ID as Teacher_ID,teacher.Name as Teacher_Name 
                         from electoral,student,course,teacher 
-                        where electoral.Student_ID = student.ID and electoral.Course_ID = course.ID and course.Teacher_ID = teacher.ID 
+                        where electoral.Student_ID = student.ID and electoral.Course_ID = course.ID and course.Teacher_ID = teacher.ID           
                         order by student_ID ";
         } else {
             $sql = "select electoral.Student_ID as Student_ID,student.Name as Student_Name,electoral.Course_ID as Course_ID,course.Name as Course_Name,teacher.ID as Teacher_ID,teacher.Name as Teacher_Name 
@@ -201,7 +201,9 @@ switch ($_GET["request"]) {
             echo 0;
         break;
     case "view_enter_grades_information":
-        $sql = "select * from student where id in(select Student_ID from electoral where Course_ID in (select  ID from course where Teacher_ID = " . $_SESSION['ID'] . "))";
+        $sql = "select student.id as ID, student.Name as Name, student.Class as Class, student.Sex as Sex, electoral.Course_ID as Course_ID 
+                from student,electoral 
+                where electoral.Course_ID in (select ID from course where Teacher_ID = '".$_SESSION['ID']."') and student.id = electoral.student_id" ;
         $result = mysqli_query($con, $sql);
         if (!empty($result)) {
             $array = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -217,7 +219,9 @@ switch ($_GET["request"]) {
             "data" => ($array)));
         break;
     case "insert_score":
-        $sql = "insert into score(student_id, course_id) select * from electoral where Student_ID = " . $_GET['ID'] . " and course_id in (select  ID from course where Teacher_ID = " . $_SESSION['ID'] . "); update score set score = '" . $_GET['value'] . "'where Student_ID = " . $_GET['ID'] . " and course_id in (select  ID from course where Teacher_ID = " . $_SESSION['ID'] . ");delete from electoral where Student_ID = " . $_GET['ID'] . " and course_id in (select  ID from course where Teacher_ID = " . $_SESSION['ID'] . ")";
+        $sql = "insert into score(student_id, course_id) select * from electoral where Student_ID = " . $_GET['ID1'] . " and course_id = " . $_GET['ID2'] . ";";
+        $sql .="update score set score = '" . $_GET['value'] . "'where Student_ID = " . $_GET['ID1'] . " and course_id = " . $_GET['ID2'] . ";";
+        $sql .="delete from electoral where Student_ID = " . $_GET['ID1'] . " and course_id = " . $_GET['ID2'] . ";";
         $result = mysqli_multi_query($con, $sql);
         if ($result)
             echo 1;

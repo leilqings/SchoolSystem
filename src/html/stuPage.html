@@ -26,7 +26,7 @@
         <a href="javascript:;">我的课程</a>
         <dl class="layui-nav-child">
             <dd><a href="javascript:;showDiv('select_course')">选课</a></dd>
-            <dd><a href="javascript:;showDiv('delete_course')">删课</a></dd>
+            <dd><a href="javascript:;showDiv('delete_course')">课程</a></dd>
             <dd><a href="javascript:;showDiv('person_score')">成绩</a></dd>
         </dl>
     </li>
@@ -54,12 +54,12 @@
             <div class="layui-input-block layui-input person_message_date_of_birth"></div>
         </div>
         <div class="layui-inline layui-form-item">
-            <div class="layui-form-label">入职时间</div>
-            <div class="layui-input-block layui-input person_message_entry_time"></div>
+            <div class="layui-form-label">入学时间</div>
+            <div class="layui-input-block layui-input person_message_admission_time"></div>
         </div>
         <div class="layui-inline layui-form-item">
-            <div class="layui-form-label">电话号</div>
-            <div class="layui-input-block layui-input person_message_phone"></div>
+            <div class="layui-form-label">公寓</div>
+            <div class="layui-input-block layui-input person_message_dormitory"></div>
         </div>
         <div class="layui-inline layui-form-item">
             <div class="layui-form-label ">身份证号</div>
@@ -95,7 +95,35 @@
             </div>
         </div>
     </div>
+    <div class="select_course layui-anim layui-anim-up" style="display: none">
+        <table class="layui-table" id="select_table" lay-filter="select_table"></table>
+    </div>
+    <div class="delete_course layui-anim layui-anim-up" style="display: none">
+        <table class="layui-table" id="delete_table" lay-filter="delete_table"></table>
+    </div>
+    <div class="person_score layui-anim layui-anim-up" style="display: none">
+        <table class="layui-table" id="score_table" lay-filter="score_table"></table>
+    </div>
 </div>
+<script type="text/html" id="active_demo1">
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<script type="text/html" id="active_demo2">
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="add">添加</a>
+</script>
+<script type="text/html" id="active_bar">
+    <div class=" check_box layui-inline">
+        <div class="layui-input layui-input-inline">
+            <i class=" layui-icon layui-icon-search"></i>
+            <input type="text" placeholder="输入查找信息" class="check_input check_input_course">
+        </div>
+        <div class="layui-btn-group layui-btn-container check_icon  layui-word-aux">
+            <button class="layui-btn layui-brn-sm" lay-event="search">
+                <i class="layui-icon layui-icon-search" style="font-size: 20px" ></i> 搜索
+            </button>
+        </div>
+    </div>
+</script>
 <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
 <script src="../../layui-v2.4.5/layui/layui.js"></script>
 <script src="../js/common.js"></script>

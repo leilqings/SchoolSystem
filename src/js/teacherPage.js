@@ -39,10 +39,11 @@ $(document).ready(function () {
             where: {
                 request: "view_enter_grades_information"
             },
-            cols: [[{field: 'ID', title: '学号',  sort: true},
-                {field: 'Name', title: '姓名',  sort: true},
-                {field: 'Class', title: '班级',  sort: true},
-                {field: 'Sex', title: '性别',  sort: true},
+            cols: [[{field: 'ID', title: '学号', sort: true},
+                {field: 'Name', title: '姓名', sort: true},
+                {field: 'Class', title: '班级', sort: true},
+                {field: 'Sex', title: '性别', sort: true},
+                {field: 'Course_ID', title: '课程号', sort: true},
                 {fixed: 'right', title: '成绩', edit: 'text'}]],
             id: 'enter_grades_table',
             title: '学生',
@@ -124,7 +125,6 @@ $(document).ready(function () {
                 {field: 'Teacher_Name', title: '教师姓名', sort: true},
                 {fixed: 'right', title: '操作', toolbar: '#active_demo'}
             ]],
-            page: true,
             toolbar: '#active_bar',
             defaultToolbar: ['filter', 'exports']
         })
@@ -139,12 +139,12 @@ $(document).ready(function () {
             },
             title: '成绩表',
             cols: [[
-                {field: 0, title: '学号', sort: true},
-                {field: 1, title: '姓名', sort: true},
-                {field: 2, title: '课程号', sort: true},
-                {field: 3, title: '课程名', sort: true},
-                {field: 4, title: '开课时间', sort: true},
-                {field: 5, title: '成绩'},
+                {field: 'Student_ID', title: '学号', sort: true},
+                {field: 'Student_Name', title: '姓名', sort: true},
+                {field: 'Course_ID', title: '课程号', sort: true},
+                {field: 'Course_Name', title: '课程名', sort: true},
+                {field: 'start_Time', title: '开课时间', sort: true},
+                {field: 'Score', title: '成绩'},
                 {fixed: 'right', title: '操作', toolbar: '#active_demo'}
             ]],
             toolbar: '#active_bar',
@@ -172,6 +172,8 @@ $(document).ready(function () {
             defaultToolbar: ['filter', 'exports']
         })
 
+        //lay-verify=required（必填项）phone（手机号）email（邮箱）url（网址）number（数字）date（日期）identity（身份证）
+
         table.on('edit(grades_table)', function (obj) {
             $.ajax({
                 url: '../php/teacherPage.php',
@@ -179,7 +181,8 @@ $(document).ready(function () {
                 type: 'get',
                 data: {
                     request: 'insert_score',
-                    ID: obj.data.ID,
+                    ID1: obj.data.ID,
+                    ID2:obj.data.Course_ID,
                     value: obj.value,
                 },
                 success: function (result) {
@@ -322,7 +325,6 @@ $(document).ready(function () {
             }
         })
         table.on('edit(student_table)', function (obj) {
-            alert(obj.filed)
             $.ajax({
                 url: '../php/teacherPage.php',
                 dataType: 'json',
@@ -627,9 +629,12 @@ $(document).ready(function () {
             accept: 'file',
             exts: 'xls|xlsx',
             done: function (res) {
-                console.log(res)
+                layer.msg(res.msg, {time: 1000});
             }
         })
+        form.on('submit(formDemo)', function (data) {
+            layer.msg(JSON.stringify(data.field));
+        });
     })
 })
 
@@ -669,8 +674,8 @@ $(".password_btn").click(function () {
             });
             $(".password2").val("")
         }
+        return false;
     }
-    return false;
 })
 $(".person_message_event").click(function () {
     $.ajax({
